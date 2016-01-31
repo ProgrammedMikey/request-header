@@ -1,10 +1,10 @@
 var express = require('express'); 
 var app = express(); 
-var PORT = 3000; 
+var routes = require('./public/app.js');
 
-app.get('/', function (req, res) { 
-	res.send('Hello Express!');
-});
+var PORT = process.env.PORT || 3000;
+
+routes(app);
 
 app.listen(PORT, function () { 
 	console.log('Express server started on port ' + PORT + '!');
